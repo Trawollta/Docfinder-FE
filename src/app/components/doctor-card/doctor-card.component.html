@@ -1,0 +1,9 @@
+<div class="doctor-card bg-white text-gray-800 border border-gray-300 rounded-lg shadow-lg p-4 hover:border-blue-500 transition">
+    <div 
+  class="doctor-card" 
+  (click)="onDoctorClick()"
+>
+    <h3 class="text-xl font-semibold text-center mb-2">{{ doctor.name }}</h3>
+    <p class="text-gray-500 text-center"><strong>Spezialisierung:</strong> {{ doctor.specialty }}</p>
+    <p class="text-gray-500 text-center"><strong>Ort:</strong> {{ doctor.location }}</p>
+  </div>  

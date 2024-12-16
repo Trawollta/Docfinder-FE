@@ -1,0 +1,18 @@
+<div class="text-black text-center p-4">
+  <p class="text-2xl font-bold">Find your Doctor now</p>
+  <input 
+    type="text" 
+    class="p-2 border-4 rounded-full hover:border-green-500 focus:border-yellow-500 focus:outline-none" 
+    placeholder="Enter your location">
+</div>
+
+<!-- Arztkarten -->
+<div class="categories grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
+  <a 
+    class="category-card bg-gray-800 text-white border border-gray-300 rounded-lg shadow-lg p-4 hover:border-blue-500 transition max-w-xs mx-auto"
+    *ngFor="let category of categories"
+    (click)="goToCategory(category.specialty)">
+    <h3 class="text-xl font-semibold text-center mb-2">{{ category.specialty }}</h3>
+    <p class="text-gray-400 text-center">{{ category.count }} doctors</p>
+  </a>
+</div>

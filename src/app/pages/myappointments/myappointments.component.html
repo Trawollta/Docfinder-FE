@@ -1,0 +1,13 @@
+<div class="appointments-container">
+  <h2>Meine gebuchten Termine</h2>
+  <div *ngIf="appointments.length === 0">
+    <p>Keine gebuchten Termine gefunden.</p>
+  </div>
+  <ul *ngIf="appointments.length > 0">
+    <li *ngFor="let appointment of appointments" class="appointment-item">
+      <strong>Arzt:</strong> {{ appointment.doctor.name }}<br>
+      <strong>Datum:</strong> {{ appointment.date }}<br>
+      <strong>Uhrzeit:</strong> {{ appointment.start_time }} - {{ appointment.end_time }}
+    </li>
+  </ul>
+</div>

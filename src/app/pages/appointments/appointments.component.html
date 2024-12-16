@@ -1,0 +1,21 @@
+<div class="appointments p-6 bg-gray-100 rounded-lg shadow-md">
+  <h2 class="text-2xl font-bold">Termine für Arzt: {{ doctorName }}</h2>
+
+  <div *ngIf="appointments.length > 0" class="appointment-list">
+    <h3 class="text-lg font-semibold my-4">Bestehende Termine:</h3>
+    <ul>
+      <li *ngFor="let appointment of appointments" class="my-2">
+        {{ appointment.date }} von {{ appointment.start_time }} bis {{ appointment.end_time }}
+        <span *ngIf="appointment.is_booked" class="text-red-500">- Gebucht</span>
+      </li>
+    </ul>
+  </div>
+  <div *ngIf="appointments.length === 0" class="text-gray-500 my-4">Keine Termine vorhanden.</div>
+
+  <form (ngSubmit)="addAppointment()">
+    <input type="date" [(ngModel)]="newAppointment.date" name="date">
+    <input type="time" [(ngModel)]="newAppointment.start_time" name="start_time">
+    <input type="time" [(ngModel)]="newAppointment.end_time" name="end_time">
+    <button type="submit">Termin hinzufügen</button>
+  </form>
+</div>

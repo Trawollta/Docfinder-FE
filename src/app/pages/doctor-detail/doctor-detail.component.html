@@ -1,0 +1,24 @@
+<div class="doctor-detail p-6 bg-gray-100 rounded-lg shadow-md">
+    <h2 class="text-2xl font-bold">{{ doctor?.name }}</h2>
+    <p class="text-gray-700 my-2"><strong>Fachgebiet:</strong> {{ doctor?.specialty }}</p>
+    <p class="text-gray-700 my-2"><strong>Standort:</strong> {{ doctor?.location }}</p>
+    <p class="text-gray-700 my-2"><strong>Beschreibung:</strong> {{ doctor?.description }}</p>
+    
+    <!-- Sternebewertung -->
+    <div class="stars my-4">
+      <ng-container *ngFor="let star of stars; index as i">
+        <i class="fa" 
+           [ngClass]="i < doctor?.rating ? 'fa-star text-yellow-500' : 'fa-star-o text-gray-400'">
+        </i>
+      </ng-container>
+    </div>
+  
+    <!-- Termin buchen -->
+    <button
+    class="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600"
+    [routerLink]="['/doctors', doctor?.id, 'appointments']"
+  >
+    Termine anzeigen
+  </button>
+  </div>
+  

@@ -1,0 +1,43 @@
+<div class="account-container">
+    <h2>Mein Account</h2>
+    <form *ngIf="user" (ngSubmit)="updateUser()">
+      <div>
+        <label for="username">Benutzername:</label>
+        <input id="username" [(ngModel)]="user.username" name="username" disabled />
+      </div>
+      <div>
+        <label for="email">E-Mail:</label>
+        <input id="email" [(ngModel)]="user.email" name="email" disabled />
+      </div>
+      <div>
+        <label for="phoneNumber">Telefonnummer:</label>
+        <input id="phoneNumber" [(ngModel)]="user.phone_number" name="phoneNumber" />
+      </div>
+      <div>
+        <label for="address">Adresse:</label>
+        <input id="address" [(ngModel)]="user.address" name="address" />
+      </div>
+      <div>
+        <label for="city">Stadt:</label>
+        <input id="city" [(ngModel)]="user.city" name="city" />
+      </div>
+      <div>
+        <label for="postalCode">Postleitzahl:</label>
+        <input id="postalCode" [(ngModel)]="user.postalCode" name="postalCode" />
+      </div>
+      <div>
+        <label for="healthInsurance">Krankenversicherung:</label>
+        <input id="healthInsurance" [(ngModel)]="user.healthInsurance" name="healthInsurance" />
+      </div>
+      <div>
+        <label for="insuranceType">Versicherungsart:</label>
+        <select id="insuranceType" [(ngModel)]="user.insuranceType" name="insuranceType">
+          <option value="gesetzlich">Gesetzlich</option>
+          <option value="privat">Privat</option>
+        </select>
+      </div>
+      <button type="submit">Aktualisieren</button>
+    </form>
+    <p *ngIf="!user">Benutzerdaten werden geladen...</p>
+  </div>
+  
